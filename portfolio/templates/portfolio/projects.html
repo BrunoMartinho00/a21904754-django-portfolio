@@ -1,0 +1,78 @@
+<!-- home.html -->
+
+{% extends 'portfolio/layout.html' %}
+
+{% load static %}
+
+{% block preMain %}
+{% endblock %}
+
+{% block main %}
+    <main class="projetos">
+        <h1>Projetos</h1>
+        <div class="content">
+            <table>
+                <th id="image">
+                    <img src="{% static 'portfolio/images/WhatsApp Image 2022-05-11 at 08.32.51.jpeg' %}" alt="Minesweeper">
+                </th>
+                <th id="about">
+                    <div>
+                        <h3>Minesweeper em kotlin</h3>
+                        <h4>Trabalho de uma cadeira do curso de engenharia informática, onde foi feito o jogo
+                            Minesweeper em linguagem Kotlin.</h4>
+                    </div>
+                </th>
+            </table>
+        </div>
+
+        <div class="content">
+            <table>
+                <th id="image">
+                    <img src="{% static 'portfolio/images/Enunciado Projecto AED - 21_22 - 1ª época - Primeira Parte.jpg' %}" alt="DeisiFlix">
+                </th>
+                <th id="about">
+                    <div>
+                        <h3>Deisiflix</h3>
+                        <h4>Projeto no ambito da cadeira de Algoritmia e estrutura de dados. Tratava-se de um script de
+                            otimização de lista com varios títulos de filmes à semelhança da famosa plataforma Netflix.
+                            Projeto desenvolvido em java.
+                        </h4>
+                    </div>
+                </th>
+            </table>
+        </div>
+
+        <div class="content">
+            <table>
+                <th id="image">
+                    <img src="{% static 'portfolio/images/deisi jungle.png' %}" alt="Deisi Jungle">
+                </th>
+                <th id="about">
+                    <div>
+                        <h3>Deisi Jungle</h3>
+                        <h4>Projeto no ambito da cadeira de Linguagens de programação 2. Foi desenvolvido um jogo em
+                            java e kotlin.
+                        </h4>
+                    </div>
+                </th>
+            </table>
+        </div>
+
+        <div class="content">
+            <table>
+                <th id="image">
+                    <img src="{% static 'portfolio/images/manometro.jpg' %}" alt="Manometro">
+                </th>
+                <th id="about">
+                    <div>
+                        <h3>Manómetro digital Auto</h3>
+                        <h4>Projeto autodidático desenvolvido com um arduino onde é mostrada as informações do carro. As
+                            informações são obtidas por CanBus e por um sensor barométrico integrado no circuito do
+                            arduino.
+                        </h4>
+                    </div>
+                </th>
+            </table>
+        </div>
+    </main>
+{% endblock %}

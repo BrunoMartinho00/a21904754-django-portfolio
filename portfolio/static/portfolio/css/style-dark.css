@@ -1,0 +1,769 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  box-sizing: border-box;
+  color: white;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: sticky;
+  display: flex;
+  padding: 0 25px;
+  height: 80px;
+  justify-content: space-between;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  background-color: rgba(50, 50, 50, 0.9);
+}
+
+header #homeButton:active,
+header #homeButton:visited,
+header #homeButton:link,
+header #homeButton:hover {
+  font-family: monospace;
+  text-decoration: none;
+  font-size: 31px;
+  margin: auto 0;
+  color: white;
+}
+
+header > nav {
+  align-items: center;
+  display: flex;
+}
+
+header .naveg,
+header .dropdown .dropbtn {
+  margin: 10px;
+  font-size: 17px;
+  text-decoration: none;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+header .naveg:link,
+header .naveg:visited {
+  color: white;
+}
+
+header .naveg:hover,
+header .naveg:active,
+header .dropdown .dropbtn:hover,
+header .dropdown-content a:hover {
+  color: blue;
+}
+
+header .dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+header .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #6a6a6a;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+header .dropdown-content a {
+  float: none;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+header .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+header button {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+header #darkModeBTN:hover {
+  color: blue;
+}
+
+/*******************************************************/
+
+footer {
+  background-color: rgba(50, 50, 50, 0.9);
+  height: 60px;
+  max-height: 90px;
+  bottom: 0;
+  position: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#footerMain {
+  position:fixed ;
+  width: 100%;
+}
+
+footer #universidade {
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+}
+
+footer #universidade p {
+  font-size: medium;
+  font-family: monospace;
+}
+
+footer #universidade img {
+  margin-right: 10px;
+}
+
+footer a:active,
+footer a:visited,
+footer a:link {
+  font-size: medium;
+  font-family: monospace;
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: blue;
+}
+
+footer #autor {
+  height: fit-content;
+  margin: 0 10px;
+}
+
+footer #autor p {
+  font-size: medium;
+  font-family: monospace;
+  text-align: end;
+}
+
+/*******************************************************/
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#myVideoOverlay {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  background-color: rgba(50, 50, 50, 0.9);
+}
+
+.index main {
+  display: flex;
+}
+
+.index #maincontent {
+  display: flex;
+  margin: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.index #profile {
+  background-color: rgb(43, 43, 43);
+  width: 300px;
+  height: 450px;
+  box-shadow: 7px 10px 20px 2px rgba(143, 143, 143, 0.521);
+}
+
+.index #profile > img {
+  width: 160px;
+  height: 160px;
+  border-radius: 100px;
+  margin: 30px auto 40px auto;
+  justify-items: center;
+  display: block;
+}
+
+.index #profile > h1 {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.index #profile > #square {
+  height: 2px;
+  width: 70px;
+  background-color: blue;
+  margin: 20px auto;
+}
+
+.index #profile > h2 {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+.index #description {
+  padding: 5px 30px;
+}
+
+.index #description > h1 {
+  font-family: system-ui;
+  font-size: 100px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.index #description > h2 {
+  margin: 0;
+}
+
+.index #description > #buttons {
+  margin: 30px 0;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.index #description > #buttons > #btn1:active,
+.index #description > #buttons > #btn1:visited,
+.index #description > #buttons > #btn1:link {
+  background-color: blue;
+  border-radius: 17px;
+  height: 35px;
+  width: 130px;
+  color: white;
+  text-decoration: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.index #description > #buttons > #btn1:hover {
+  background-color: white;
+  border: blue solid 1px;
+  color: black;
+}
+
+.index #description > #buttons > #btn2:active,
+.index #description > #buttons > #btn2:visited,
+.index #description > #buttons > #btn2:link {
+  border: 1px solid black;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  border-radius: 17px;
+  height: 35px;
+  width: 130px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.index #description > #buttons > #btn2:hover {
+  background-color: blue;
+  color: white;
+  border: 1px solid blue;
+}
+
+.index #description > p {
+  max-width: 296px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-family: system-ui;
+}
+
+/*******************************************************/
+
+.curriculo {
+  background-color: rgb(50, 50, 50);
+  margin: 0;
+  padding: 30px;
+  justify-content: center;
+  display: grid;
+}
+
+.curriculo h1 {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.curriculo .category {
+  margin: 0 0 100px 0;
+}
+
+.curriculo #title {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 700px;
+  margin: 0 0 10px 0;
+  position: relative;
+}
+
+.curriculo #title a {
+  position: absolute;
+  left: 0;
+  background: none;
+  border: none;
+  color: blue;
+}
+
+.curriculo #title h2 {
+  font-weight: bold;
+}
+
+.curriculo #title > #download {
+  background-color: blue;
+  border-radius: 17px;
+  height: 35px;
+  width: 130px;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.curriculo h3,
+h4,
+p {
+  margin: 0;
+}
+
+.curriculo > div > .content {
+  background-color: #515151;
+  box-shadow: 7px 10px 20px 2px rgba(143, 143, 143, 0.221);
+
+  height: 300px;
+  max-width: 700px;
+  width: 700px;
+  margin: 0 0 20px 0;
+  position: relative;
+}
+
+.curriculo #settings {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.curriculo #settings button {
+  background: none;
+  border: none;
+}
+
+.curriculo #settings button span {
+  font-size: large;
+}
+
+.curriculo table {
+  width: 100%;
+}
+
+.curriculo table th {
+  /*width: 50%;*/
+}
+
+.curriculo table #location {
+  height: 300px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.curriculo table #location div {
+  display: grid;
+  justify-items: baseline;
+  margin-left: 50px;
+}
+
+.curriculo table #location div h3 {
+  color: blue;
+  margin: 7px;
+  font-weight: bold;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.curriculo table #location div h4 {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.curriculo table #location div p {
+  margin: 7px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.curriculo table #description {
+  padding: 20px 50px 20px 20px;
+  justify-content: baseline;
+  width: 60%;
+}
+.curriculo table #description p {
+  justify-content: baseline;
+  justify-items: baseline;
+  display: flex;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: justify;
+}
+
+.curriculo #participacoes .content {
+  display: flex;
+  justify-items: center;
+  align-content: center;
+}
+
+.curriculo #participacoes .content #info {
+  width: fit-content;
+  margin: auto;
+  height: inherit;
+  text-align: center;
+  align-content: center;
+  display: inline-grid;
+}
+
+.curriculo #participacoes div h3 {
+  color: blue;
+  margin: 7px;
+  font-weight: bold;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.curriculo #participacoes div h4 {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.curriculo #participacoes div p {
+  margin: 7px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/*******************************************************/
+
+.projetos {
+  background-color: rgb(50, 50, 50);
+  margin: 0;
+  padding: 30px;
+  justify-content: center;
+  display: grid;
+}
+
+.projetos h1 {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.projetos > .content {
+  background-color: #515151;
+  box-shadow: 7px 10px 20px 2px rgba(143, 143, 143, 0.221);
+
+  height: 200px;
+  max-width: 700px;
+  width: 700px;
+  margin: 0 0 20px 0;
+}
+
+.projetos table {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  display: contents;
+}
+
+.projetos table #image {
+  width: 200px;
+  height: 200px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.projetos table #image img {
+  width: 200px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.projetos table #about {
+  padding: 20px;
+  width: 500px;
+}
+
+.projetos table h3 {
+  color: rgb(6, 6, 140);
+  margin: 7px;
+  font-weight: bold;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.curriculo table p {
+  margin: 7px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/*******************************************************/
+
+.contactos {
+  background-color: rgb(50, 50, 50);
+  width: 100%;
+  height: 90%;
+}
+
+.contactos table {
+  width: 100%;
+  height: 100%;
+}
+
+.contactos table #infos {
+  width: 35%;
+}
+
+.contactos table #infos div {
+  margin-left: 60px;
+}
+
+.contactos table #infos div h1 {
+  font-size: 43px;
+  font-family: unset;
+  font-weight: bold;
+  text-align: initial;
+  margin-bottom: 50px;
+}
+
+.contactos table #infos div h2 {
+  font-size: 18px;
+  font-family: unset;
+  font-weight: bold;
+  margin: 0;
+  text-align: initial;
+}
+
+.contactos table #infos div h3 {
+  font-size: 16px;
+  font-family: unset;
+  margin: 0;
+  text-align: initial;
+  margin-bottom: 20px;
+}
+
+.contactos table #buttons {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+}
+
+.contactos table #buttonsZone {
+  height: 380px;
+  width: 380px;
+  display: flex;
+  align-items: center;
+  flex-flow: wrap;
+  justify-content: space-evenly;
+}
+
+.contactos table #buttons .circle {
+  background-color: rgb(0, 0, 139);
+  border-radius: 50%;
+  height: 170px;
+  width: 170px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactos table #buttons .circle:hover {
+  animation-name: hoverContactButton;
+  animation-duration: 0.5s;
+  background-color: rgb(64, 64, 137);
+}
+
+.contactos table #buttons .circle img {
+  height: 60px;
+}
+
+@keyframes hoverContactButton {
+  from {
+    background-color: rgb(0, 0, 139);
+  }
+  to {
+    background-color: rgb(64, 64, 137);
+  }
+}
+
+/*******************************************************/
+
+.scripts {
+  background-color: rgb(50, 50, 50);
+  margin: 0;
+  padding: 30px;
+  justify-content: center;
+  display: grid;
+}
+
+.scripts .content {
+  background-color: #515151;
+  box-shadow: 7px 10px 20px 2px rgba(143, 143, 143, 0.221);
+
+  height: 200px;
+  max-width: 700px;
+  width: 700px;
+  margin: 0 0 20px 0;
+  padding: 15px;
+
+  display: grid;
+}
+
+.scripts button {
+  background-color: rgb(26, 29, 30);
+}
+
+.scripts .content div {
+  margin: 0 auto;
+}
+
+input, textarea, select, button, dialog {
+  background-color: #1a1d1e;
+}
+
+.scripts #fotografiaInspiradora {
+  height: fit-content;
+  display: grid;
+}
+
+.scripts #fotografiaInspiradora div.image > p {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: aliceblue;
+  font-size: x-large;
+  text-shadow: 2px 2px 5px black;
+}
+
+.scripts #fotografiaInspiradora div.image {
+  position: relative;
+}
+
+.scripts #sitiosdiferentes {
+  display: inherit;
+}
+
+.scripts #sitiosdiferentes div {
+  margin: 0 auto;
+}
+
+.scripts > .content input.darkMode {
+  background-color: darkgray;
+}
+
+/*******************************************************/
+
+.login main {
+  display: flex;
+}
+
+.login #maincontent {
+  display: flex;
+  margin: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login #background {
+  background-color: rgb(43, 43, 43);
+  width: 500px;
+  height: 450px;
+  box-shadow: 7px 10px 20px 2px rgba(143, 143, 143, 0.521);
+}
+
+.login h1 {
+  margin-left: 50px;
+  margin-top: 70px;
+  font-family: monospace;
+  font-size: 35px;
+}
+
+.login form {
+  display: grid;
+  height: 316px;
+  padding-top: 40px;
+}
+
+.login #usernameText {
+  margin: 10px 40px;
+  font-size: large;
+  background: none;
+  border: none;
+  border-bottom: 2px solid rgb(224, 224, 224);
+  height: 40px;
+}
+
+.login #passwordText {
+  margin: 10px 40px;
+  font-size: large;
+  background: none;
+  border: none;
+  border-bottom: 2px solid rgb(224, 224, 224);
+  height: 40px;
+}
+
+.login #submitButton {
+  font-size: large;
+  background: rgb(0, 0, 80);
+  border: none;
+  height: 40px;
+  align-self: end;
+  color: white;
+  font-family: inherit;
+}
+

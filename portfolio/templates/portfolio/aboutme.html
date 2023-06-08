@@ -1,0 +1,126 @@
+<!-- home.html -->
+
+{% extends 'portfolio/layout.html' %}
+
+
+{% block preMain %}
+{% endblock %}
+
+{% block main %}
+    <main class="curriculo">
+        <h1>Currículo</h1>
+        <div id="formacao" class="category">
+            <div id="title">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'portfolio:new_formacao' %}"><span class="material-symbols-outlined" id="darkModeBTN">add_circle</span></a>
+                {% endif %}
+                <h2>Formação</h2>
+                <div id="download">Download CV</div>
+            </div>
+
+            {% for formacao in formacoes %}
+                <div class="content">
+                    <table>
+                        <th id="location">
+                            <div>
+                                <h3>{{ formacao.data_inicio }} - {{ formacao.data_fim }}</h3>
+                                <h4>{{ formacao.escola }}</h4>
+                                <p>{{ formacao.curso }}</p>
+                                <p>{{ formacao.localizacao }}</p>
+                            </div>
+                        </th>
+                        <th id="description">
+                            <p>{{ formacao.descricao }}</p>
+                        </th>
+                    </table>
+                    {% if user.is_authenticated %}
+                        <div id="settings">
+                            <a href="{% url 'portfolio:edit_formacao' formacao.id %}"><span class="material-symbols-outlined" id="darkModeBTN">settings</span></a>
+                            <a href="{% url 'portfolio:remove_formacao' formacao.id %}"><span class="material-symbols-outlined" id="darkModeBTN">delete</span></a>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+        </div>
+
+        <div id="participacoes" class="category">
+            <div id="title">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'portfolio:new_participacao' %}"><span class="material-symbols-outlined" id="darkModeBTN">add_circle</span></a>
+                {% endif %}
+                <h2>Participações extracurriculares</h2>
+            </div>
+
+            {% for participacao in participacoes %}
+                <div class="content">
+                    <div id="info">
+                        {% if participacao.data_fim %}
+                            {% if participacao.data_inicio|date:'Y' == participacao.data_fim|date:'Y' and participacao.data_inicio|date:'M' == participacao.data_fim|date:'M' %}
+                                <h3>{{ participacao.data_inicio|date:"d" }}-{{ participacao.data_fim|date:"d/m/Y" }}</h3>
+                            {% else %}
+                                <h3>{{ participacao.data_inicio|date:"d/m/Y" }}
+                                    - {{ participacao.data_fim|date:"d/m/Y" }}</h3>
+                            {% endif %}
+                        {% else %}
+                            <h3>{{ participacao.data_inicio|date:"d/m/Y" }}</h3>
+                        {% endif %}
+
+
+
+                        <h4>{{ participacao.titulo }}</h4>
+                        <p></p>
+                        <p>{{ participacao.localizacao }}</p>
+                    </div>
+
+                    {% if user.is_authenticated %}
+                        <div id="settings">
+                            <a href="{% url 'portfolio:edit_participacao' participacao.id %}"><span class="material-symbols-outlined" id="darkModeBTN">settings</span></a>
+                            <a href="{% url 'portfolio:remove_participacao' participacao.id %}"><span class="material-symbols-outlined" id="darkModeBTN">delete</span></a>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+
+        </div>
+
+        <div id="participacoes" class="category">
+            <div id="title">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'portfolio:new_interesse' %}"><span class="material-symbols-outlined" id="darkModeBTN">add_circle</span></a>
+                {% endif %}
+                <h2>Interesses e hobbies</h2>
+            </div>
+            {% for interesse in interesses %}
+            <div class="content">
+                <table>
+                    <th id="location">
+                        <div>
+                            <h3>{{ interesse.titulo }}</h3>
+                            <h4></h4>
+                            <p></p>
+                            <p></p>
+                        </div>
+                    </th>
+                    <th id="description">
+                        <p>{{ interesse.descricao}}</p>
+                    </th>
+                </table>
+
+                {% if user.is_authenticated %}
+                    <div id="settings">
+                        <a href="{% url 'portfolio:edit_interesse' interesse.id %}"><span class="material-symbols-outlined" id="darkModeBTN">settings</span></a>
+                        <a href="{% url 'portfolio:remove_interesse' interesse.id %}"><span class="material-symbols-outlined" id="darkModeBTN">delete</span></a>
+                    </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+
+
+
+
+
+        </div>
+    </main>
+{% endblock %}

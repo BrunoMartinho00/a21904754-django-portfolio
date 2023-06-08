@@ -1,0 +1,30 @@
+<!-- home.html -->
+
+{% extends 'portfolio/layout.html' %}
+
+{% load static %}
+
+{% block preMain %}
+    <video autoplay muted loop id="myVideo">
+        <source src="{% static 'portfolio/images/10mb branco.mp4' %}" type="video/mp4" id="backgroundVideo">
+        <source src="{% static 'portfolio/images/10mb preto.mp4' %}" type="video/mp4" id="backgroundVideo1">
+        Your browser does not support HTML5 video.
+    </video>
+    <div id="myVideoOverlay"></div>
+{% endblock %}
+
+{% block main %}
+    <main class="login">
+        <div id="maincontent">
+            <div id="background">
+                <h1>Novo</h1>
+                <form action="" method="post">
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+                    <input type="submit" value="Gravar">
+                </form>
+            </div>
+        </div>
+    </main>
+{% endblock %}

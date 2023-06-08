@@ -1,0 +1,92 @@
+<!-- home.html -->
+
+{% extends 'portfolio/layout.html' %}
+
+{% load static %}
+
+{% block preMain %}
+{% endblock %}
+
+{% block main %}
+<main class="scripts">
+        <div class="content" id="calculadora">
+            <h2>Calculadora</h2>
+            <div>
+                <p>Insira a sua expressão matemática:</p>
+                <input type="text" id="expressao">
+                <button onclick="calcular()">Calcular</button>
+                <button onclick="apagar()">Apagar</button>
+                <div id="resultado"></div>
+            </div>
+        </div>
+
+        <div class="content" id="fotografiaInspiradora">
+            <h2>Fotografia inspiradora</h2>
+            <div class="image" id="imagem">
+                <img src="{% static 'portfolio/images/Paisagem-1.jpg' %}" alt="">
+                <p id="resultadoTexto"></p>
+            </div>
+            <br>
+            <p>o que esta foto lhe diz?</p>
+            <input type="text" id="frase">
+        </div>
+
+        <div class="content" id="sitiosdiferentes">
+            <h2 id="locationTitle">Pelo menos 3 sítios diferentes</h2>
+            <div>
+                <p>Indica-me o teu nome!</p>
+                <input type="text" id="insertedName">
+                <button onclick="diferentLocations()">Aplicar</button>
+            </div>
+        </div>
+
+        <div class="content" id="sitiosdiferentes">
+            <h2>Que dia é hoje?</h2>
+            <h3 style="text-align: center;" id="currentDay"></h3>
+        </div>
+    </main>
+
+    <script>
+        function calcular() {
+            const expressao = document.getElementById("expressao").value;
+            const resultado = eval(expressao);
+            document.getElementById("resultado").innerHTML = "Resultado: " + resultado;
+        }
+
+        function apagar() {
+            document.getElementById("resultado").innerHTML = "";
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('#frase').onkeyup = detetar_texto
+        })
+
+        function detetar_texto() {
+            console.log(document.getElementById("resultadoTexto"));
+            let texto = document.getElementById("frase").value;
+            document.getElementById("resultadoTexto").innerHTML = texto;
+        }
+
+        function diferentLocations() {
+            let name = document.getElementById("insertedName").value;
+            document.getElementById("homeButton").innerHTML = "O teu nome é " + name;
+            document.getElementById("locationTitle").innerHTML = "O teu nome é " + name;
+            document.getElementById("scriptsName").innerHTML = "O teu nome é " + name;
+        }
+
+        function getDate() {
+            var dataAtual = new Date();
+
+            var dia = dataAtual.getDate()
+            var mes = dataAtual.getMonth() + 1;
+            var ano = dataAtual.getFullYear();
+
+            var dataFormatada = dia + '/' + mes + '/' + ano;
+
+            document.getElementById("currentDay").innerHTML = dataFormatada;
+
+        }
+
+        window.addEventListener('DOMContentLoaded', getDate);
+    </script>
+{% endblock %}
