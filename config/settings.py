@@ -125,3 +125,10 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = 'portfolio:login'
+
+# default static files settings for PythonAnywhere.
+# see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
+MEDIA_ROOT = '/home/TrevorLynn2/a21904754-django-portfolio/portfolio/media'
+MEDIA_URL = '/media/'
+STATIC_ROOT = '/home/TrevorLynn2/a21904754-django-portfolio/portfolio/static'
+STATIC_URL = '/static/'
