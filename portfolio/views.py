@@ -1,4 +1,4 @@
-import form as form
+
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import *
 from django.http import HttpResponseRedirect
