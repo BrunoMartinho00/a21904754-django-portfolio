@@ -12,10 +12,11 @@
         <div id="formacao" class="category">
             <div id="title">
                 {% if user.is_authenticated %}
-                    <a href="{% url 'portfolio:new_formacao' %}"><span class="material-symbols-outlined" id="darkModeBTN">add_circle</span></a>
+                    <a href="{% url 'portfolio:new_formacao' %}" id="plusContent"><span class="material-symbols-outlined" id="darkModeBTN">add_circle</span></a>
                 {% endif %}
                 <h2>Formação</h2>
-                <div id="download">Download CV</div>
+                {% load static %}
+                <a id="download" href="{% static 'portfolio/images/site map.jpg' %}" target="_blank">Download CV</a>
             </div>
 
             {% for formacao in formacoes %}
@@ -47,7 +48,7 @@
         <div id="participacoes" class="category">
             <div id="title">
                 {% if user.is_authenticated %}
-                    <a href="{% url 'portfolio:new_participacao' %}"><span class="material-symbols-outlined" id="darkModeBTN">add_circle</span></a>
+                    <a href="{% url 'portfolio:new_participacao' %}" id="plusContent"><span class="material-symbols-outlined" id="darkModeBTN">add_circle</span></a>
                 {% endif %}
                 <h2>Participações extracurriculares</h2>
             </div>
@@ -85,10 +86,10 @@
 
         </div>
 
-        <div id="participacoes" class="category">
+        <div id="interesses" class="category">
             <div id="title">
                 {% if user.is_authenticated %}
-                    <a href="{% url 'portfolio:new_interesse' %}"><span class="material-symbols-outlined" id="darkModeBTN">add_circle</span></a>
+                    <a href="{% url 'portfolio:new_interesse' %}" id="plusContent"><span class="material-symbols-outlined" id="darkModeBTN">add_circle</span></a>
                 {% endif %}
                 <h2>Interesses e hobbies</h2>
             </div>

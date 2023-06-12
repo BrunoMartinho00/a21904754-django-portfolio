@@ -334,7 +334,7 @@ footer #autor p {
   position: relative;
 }
 
-.curriculo #title a {
+.curriculo #title #plusContent {
   position: absolute;
   left: 0;
   background: none;
