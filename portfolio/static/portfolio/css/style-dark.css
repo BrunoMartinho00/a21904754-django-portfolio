@@ -704,6 +704,11 @@ input, textarea, select, button, dialog {
   background-color: darkgray;
 }
 
+.scripts #currentDate h3 {
+  margin: 0;
+  height: fit-content;
+}
+
 /*******************************************************/
 
 .login main {

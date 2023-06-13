@@ -9,6 +9,8 @@ from django.http import HttpResponse
 from portfolio.models import *
 from .forms import *
 
+import requests
+from bs4 import BeautifulSoup
 
 # Create your views here.
 
@@ -32,7 +34,16 @@ def contacts_page_view(request):
     return render(request, 'portfolio/contacts.html')
 
 def scripts_page_view(request):
-    return render(request, 'portfolio/scripts.html')
+    url = 'https://www.tempo.pt/lisboa.htm'
+    response = requests.get(url)
+    soup = BeautifulSoup(response.content, 'html.parser')
+    temperature = soup.find_all(class_='dato-temperatura changeUnitT')[0].get_text()
+
+    context = {
+        'temperature': temperature,
+    }
+
+    return render(request, 'portfolio/scripts.html', context)
 
 def login_page_view(request):
     if request.method == "POST":

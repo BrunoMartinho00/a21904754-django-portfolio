@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 django = "*"
+beautifulsoup4 = "*"
+bs4 = "*"
 
 [dev-packages]
 

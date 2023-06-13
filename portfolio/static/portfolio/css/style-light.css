@@ -703,6 +703,11 @@ p {
   margin: 0 auto;
 }
 
+.scripts #currentDate h3 {
+  margin: 0;
+  height: fit-content;
+}
+
 /*******************************************************/
 
 .login main {
