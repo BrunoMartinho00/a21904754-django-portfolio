@@ -34,10 +34,14 @@ def contacts_page_view(request):
     return render(request, 'portfolio/contacts.html')
 
 def scripts_page_view(request):
-    url = 'https://www.tempo.pt/lisboa.htm'
+    url = "https://api.weatherapi.com/v1/current.json?key=c36ba19e1cad4b18a0a182405231406&q=Lisbon"
     response = requests.get(url)
-    soup = BeautifulSoup(response.content, 'html.parser')
-    temperature = soup.find_all(class_='dato-temperatura changeUnitT')[0].get_text()
+    data = response.json()
+
+    if response.status_code == 200:
+        temperature = data["current"]["temp_c"]
+    else:
+        temperature = "N/A"
 
     context = {
         'temperature': temperature,
