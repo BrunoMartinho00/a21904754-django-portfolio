@@ -708,6 +708,14 @@ p {
   height: fit-content;
 }
 
+.scripts #video {
+  height: fit-content;
+}
+
+.scripts #video iframe {
+  margin: auto;
+}
+
 /*******************************************************/
 
 .login main {
